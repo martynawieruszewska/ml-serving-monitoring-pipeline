@@ -1,0 +1,14 @@
+# środowisko
+.venv/
+__pycache__/
+*.pyc
+
+# dane i artefakty
+data/raw/
+models/*.pkl
+*.db
+
+# system / IDE
+.DS_Store
+.vscode/
+.idea/
