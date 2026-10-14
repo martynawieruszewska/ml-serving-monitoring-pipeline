@@ -12,6 +12,7 @@ from src.config import (
 
 from src.preprocessing import (
     clean_data,
+    build_pipeline
 )
 
 from src.config import (
@@ -39,3 +40,6 @@ print(X_test.shape)
 
 print(y_train.mean())
 print(y_test.mean())
+
+pipeline = build_pipeline()
+print(pipeline)
