@@ -15,8 +15,10 @@ from src.preprocessing import (
 )
 
 from src.config import (
+    ID_COLUMN,
     TARGET,
     PRODUCTION_SIZE,
+    TEST_SIZE,
     RANDOM_STATE,
 )
 
@@ -27,7 +29,13 @@ df_model, df_production = train_test_split(df, test_size=PRODUCTION_SIZE, strati
 SIMULATION_DIR.mkdir(parents=True, exist_ok=True)
 df_production.to_csv(PRODUCTION_DATA_PATH, index=False)
 
-print(df_model.shape)
-print(df_model[TARGET].value_counts(normalize=True))
-print(df_production.shape)
-print(df_production[TARGET].value_counts(normalize=True))
+X = df_model.drop(columns=[ID_COLUMN, TARGET])
+y = df_model[TARGET].map({"Yes": 1, "No": 0})
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=TEST_SIZE, stratify=y, random_state=RANDOM_STATE)
+
+print(X_train.shape)
+print(X_test.shape)
+
+print(y_train.mean())
+print(y_test.mean())
