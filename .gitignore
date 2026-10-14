@@ -5,6 +5,7 @@ __pycache__/
 
 # dane i artefakty
 data/raw/
+data/simulation
 models/*.pkl
 *.db
 
