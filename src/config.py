@@ -21,3 +21,7 @@ BINARY_FEATURES = ["SeniorCitizen"]
 RANDOM_STATE = 42
 PRODUCTION_SIZE = 0.2
 TEST_SIZE = 0.25
+
+DB_PATH = ROOT / "data" / "predictions.db"
+
+THRESHOLD = 0.5
