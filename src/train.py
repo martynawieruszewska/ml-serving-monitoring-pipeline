@@ -23,6 +23,7 @@ from src.config import (
     PRODUCTION_SIZE,
     TEST_SIZE,
     RANDOM_STATE,
+    TRAINING_DATA_PATH,
 )
 from src.preprocessing import (
     build_pipeline,
@@ -37,6 +38,7 @@ def main() -> None:
 
     SIMULATION_DIR.mkdir(parents=True, exist_ok=True)
     df_production.to_csv(PRODUCTION_DATA_PATH, index=False)
+    df_model.to_csv(TRAINING_DATA_PATH, index=False)
 
     X = df_model.drop(columns=[ID_COLUMN, TARGET])
     y = df_model[TARGET].map({"Yes": 1, "No": 0})

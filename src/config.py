@@ -12,6 +12,7 @@ METRICS_PATH = REPORTS_DIR / "metrics.json"
 
 SIMULATION_DIR = ROOT / "data" / "simulation"
 PRODUCTION_DATA_PATH = SIMULATION_DIR / "production_traffic.csv"
+TRAINING_DATA_PATH = ROOT / "data" / "training_data.csv"
 
 TARGET = "Churn"
 ID_COLUMN = "customerID"

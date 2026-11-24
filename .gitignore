@@ -6,6 +6,7 @@ __pycache__/
 # dane i artefakty
 data/raw/
 data/simulation
+data/training_data.csv
 models/*.pkl
 *.db
 
