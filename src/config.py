@@ -26,3 +26,5 @@ TEST_SIZE = 0.25
 DB_PATH = ROOT / "data" / "predictions.db"
 
 THRESHOLD = 0.5
+DRIFT_P_VALUE_THRESHOLD = 0.05
+
