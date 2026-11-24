@@ -33,7 +33,7 @@ def check_drift() -> dict:
 
     for feature in NUMERIC_FEATURES:
         _, p_value = ks_2samp(reference[feature], logged[feature])
-        drift = p_value < DRIFT_P_VALUE_THRESHOLD
+        drift = bool(p_value < DRIFT_P_VALUE_THRESHOLD)
         results[feature] = drift
 
         if drift:
