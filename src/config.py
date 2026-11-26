@@ -12,6 +12,7 @@ METRICS_PATH = REPORTS_DIR / "metrics.json"
 
 SIMULATION_DIR = ROOT / "data" / "simulation"
 PRODUCTION_DATA_PATH = SIMULATION_DIR / "production_traffic.csv"
+TRAINING_DATA_PATH = ROOT / "data" / "training_data.csv"
 
 TARGET = "Churn"
 ID_COLUMN = "customerID"
@@ -25,3 +26,5 @@ TEST_SIZE = 0.25
 DB_PATH = ROOT / "data" / "predictions.db"
 
 THRESHOLD = 0.5
+DRIFT_P_VALUE_THRESHOLD = 0.05
+
