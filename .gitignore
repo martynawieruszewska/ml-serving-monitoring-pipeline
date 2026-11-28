@@ -14,3 +14,6 @@ models/*.pkl
 .DS_Store
 .vscode/
 .idea/
+
+# claude code
+.claude/settings.local.json
