@@ -5,11 +5,12 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import FunctionTransformer, OneHotEncoder, StandardScaler
 
 from src.config import (
+    BINARY_FEATURES,
     CATEGORICAL_FEATURES,
     NUMERIC_FEATURES,
-    BINARY_FEATURES,
     RANDOM_STATE,
 )
+
 
 def clean_data(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()
@@ -20,6 +21,7 @@ def clean_data(df: pd.DataFrame) -> pd.DataFrame:
     df = df.replace({"No internet service": "No", "No phone service": "No"})
 
     return df
+
 
 def build_pipeline() -> Pipeline:
     encoder = ColumnTransformer(

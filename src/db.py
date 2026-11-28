@@ -4,6 +4,7 @@ from datetime import datetime, timezone
 
 from src.config import DB_PATH
 
+
 def init_db() -> None:
     with sqlite3.connect(DB_PATH) as conn:
         conn.execute("""
@@ -15,6 +16,7 @@ def init_db() -> None:
                 churn INTEGER not null
             )
         """)
+
 
 def log_prediction(input_data: dict, churn_probability: float, churn: bool) -> None:
     with sqlite3.connect(DB_PATH) as conn:

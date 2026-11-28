@@ -1,19 +1,15 @@
-from fastapi import FastAPI
 import joblib
 import pandas as pd
+from fastapi import FastAPI
+
+from src.config import MODEL_PATH, THRESHOLD
+from src.db import init_db, log_prediction
 from src.schemas import CustomerFeatures
-from src.config import (
-    MODEL_PATH,
-    THRESHOLD
-)
-from src.db import (
-    init_db,
-    log_prediction
-)
 
 model = joblib.load(MODEL_PATH)
 app = FastAPI(title="ml-serving-monitoring-pipeline")
 init_db()
+
 
 @app.post("/predict")
 def predict(features: CustomerFeatures):
