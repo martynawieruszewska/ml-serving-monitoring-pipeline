@@ -19,7 +19,7 @@ def load_combined_data() -> pd.DataFrame:
     training = pd.read_csv(TRAINING_DATA_PATH)
     production = pd.read_csv(PRODUCTION_DATA_PATH)
 
-    return pd.concat([training, production], ignore_index=True)
+    return pd.concat([training, production], ignore_index=True).drop_duplicates(subset=[ID_COLUMN], keep="last")
 
 def retrain():
     results = check_drift()
@@ -37,6 +37,7 @@ def retrain():
     pipeline.fit(X, y)
 
     joblib.dump(pipeline, MODEL_PATH)
+    df.to_csv(TRAINING_DATA_PATH, index=False)
     print("Model retrained and saved")
 
 if __name__ == "__main__":
