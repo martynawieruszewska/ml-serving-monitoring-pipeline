@@ -13,11 +13,13 @@ def rng(tmp_path, monkeypatch):
     rng = np.random.default_rng(42)
     tenure = rng.integers(0, 73, size=1000)
     monthly = rng.uniform(20, 120, size=1000)
-    reference = pd.DataFrame({
-        "tenure": tenure,
-        "MonthlyCharges": monthly,
-        "TotalCharges": tenure * monthly,
-    })
+    reference = pd.DataFrame(
+        {
+            "tenure": tenure,
+            "MonthlyCharges": monthly,
+            "TotalCharges": tenure * monthly,
+        }
+    )
     reference.to_csv(training_path, index=False)
 
     monkeypatch.setattr(db, "DB_PATH", db_path)

@@ -1,8 +1,10 @@
+from typing import Literal
+
 from pydantic import (
     BaseModel,
     Field,
 )
-from typing import Literal
+
 
 class CustomerFeatures(BaseModel):
     gender: Literal["Male", "Female"]

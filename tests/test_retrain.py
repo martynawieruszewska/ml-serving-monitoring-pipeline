@@ -6,7 +6,6 @@ import pytest
 from src import db, drift, retrain
 from src.config import CATEGORICAL_FEATURES, ID_COLUMN, NUMERIC_FEATURES, TARGET
 
-
 CATEGORY_VALUES = {
     "gender": ["Male", "Female"],
     "Partner": ["Yes", "No"],

@@ -16,7 +16,23 @@ TRAINING_DATA_PATH = ROOT / "data" / "training_data.csv"
 
 TARGET = "Churn"
 ID_COLUMN = "customerID"
-CATEGORICAL_FEATURES = ["gender", "Partner", "Dependents", "PhoneService", "MultipleLines", "InternetService", "OnlineSecurity", "OnlineBackup", "DeviceProtection", "TechSupport", "StreamingTV", "StreamingMovies", "Contract", "PaperlessBilling", "PaymentMethod"]
+CATEGORICAL_FEATURES = [
+    "gender",
+    "Partner",
+    "Dependents",
+    "PhoneService",
+    "MultipleLines",
+    "InternetService",
+    "OnlineSecurity",
+    "OnlineBackup",
+    "DeviceProtection",
+    "TechSupport",
+    "StreamingTV",
+    "StreamingMovies",
+    "Contract",
+    "PaperlessBilling",
+    "PaymentMethod",
+]
 NUMERIC_FEATURES = ["tenure", "MonthlyCharges", "TotalCharges"]
 BINARY_FEATURES = ["SeniorCitizen"]
 RANDOM_STATE = 42
@@ -27,4 +43,3 @@ DB_PATH = ROOT / "data" / "predictions.db"
 
 THRESHOLD = 0.5
 DRIFT_P_VALUE_THRESHOLD = 0.05
-
