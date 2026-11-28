@@ -16,4 +16,5 @@ models/*.pkl
 .idea/
 
 # claude code
+CLAUDE.md
 .claude/settings.local.json
